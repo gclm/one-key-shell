@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+  drone-server:
+    image: drone/drone:latest
+    container_name: drone-server
+    ports:
+      - '18003:80'
+      - '8000:8000'
+      - '9000:9000'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/drone/:/var/lib/drone/:rw
+    environment:
+      - DRONE_AGENTS_ENABLED=true
+      - DRONE_GITEA_SERVER=https://drone.xx.com/
+      - DRONE_GITEA_CLIENT_ID=c939ec53-d918-4d57-9dcf-b575d25c538f
+      - DRONE_GITEA_CLIENT_SECRET=R8uOU2hN2AS2rlM3OUcQoJB8ysTjW6aVdy9Gt3cFAiE=
+      - DRONE_RPC_SECRET=201c9fa242164b5180e357be75844cb7
+      - DRONE_SERVER_HOST=drone.xx.com
+      - DRONE_SERVER_PROTO=https
+      - TZ=Asia/Shanghai
+    restart: always
+    networks:
+      - default
+      - web
+
+  drone-agent:
+    image: drone/agent:latest
+    container_name: drone-agent
+    command: agent
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      #- DRONE_RPC_SERVER=http://192.168.88.190:9000
+      - DRONE_RPC_SERVER=drone-server:9000
+      - DRONE_RPC_SECRET=201c9fa242164b5180e357be75844cb7
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_RUNNER_NAME=drone-agent
+      - DRONE_LOGS_DEBUG=true
+      - TZ=Asia/Shanghai
+    restart: always
+    #detach: true
+    networks:
+      - default
+      - web
+
+networks:
+  web:
+    external: true

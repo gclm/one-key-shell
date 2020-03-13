@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - /opt/gitea:/data
+    restart: always
+    networks:
+      - default
+      - web
+    ports:
+      - "18001:3000"
+      - "18002:22"
+
+  db:
+    image: postgres:9.6
+    restart: always
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=gitea
+      - POSTGRES_DB=gitea
+    volumes:
+      - /opt/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: "exit 0"
+
+networks:
+  web:
+    external: true
+
+
