@@ -1,4 +1,0 @@
-export JAVA_HOME=/opt/dev_tools/jdk1.8.0_181
-export M2_HOME=/opt/dev_tools/apache-maven-3.6.1
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:
