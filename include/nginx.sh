@@ -3,32 +3,25 @@
 
 install(){
 
-shell_file=$(ls | grep system.sh)
-if [ ! -f "$shell_file" ]; then
-    wget https://gitee.com/gclm/one-key-linux/raw/master/include/system.sh && chmod +x system.sh
-fi
-. system.sh
-
 rm -rf /etc/yum.repos.d/nginx.repo
-cd /etc/yum.repos.d
+yum install -y yum-utils
+sudo tee /etc/yum.repos.d/nginx.repo <<-'EOF'
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
 
-if [[ ${version} == "8" ]]; then
-sudo tee /etc/yum.repos.d/nginx.repo <<-'EOF'
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/8/$basearch/
-gpgcheck=0
-enabled=1
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
 EOF
-else
-sudo tee /etc/yum.repos.d/nginx.repo <<-'EOF'
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/7/$basearch/
-gpgcheck=0
-enabled=1
-EOF
-fi
 
 yum install -y nginx
 clear
