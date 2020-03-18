@@ -2,7 +2,8 @@
 
 main(){
 # 判断系统是否是centos和 root 用户
-curl https://gitee.com/gclm/one-key-linux/raw/master/include/system.sh | bash
+wget https://gitee.com/gclm/one-key-linux/raw/master/include/system.sh && chmod +x system.sh
+. system.sh
 
 yum install -y curl wget vim
 echo "安装 curl wget vim success"
@@ -30,7 +31,7 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/update-hostname.sh 
 
 # 增加交换2G交换分区
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/swap.sh | bash
-
+rm -rf system.sh
 reboot
 
 }
