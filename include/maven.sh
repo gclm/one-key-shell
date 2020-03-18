@@ -8,13 +8,15 @@ maven(){
     wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/apache-maven-3.6.3-bin.tar.gz
 
     echo " 开始安装 Maven "
-    tar -zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local/maven
+    tar -zxvf apache-maven-3.6.3-bin.tar.gz
+    mv apache-maven-3.6.3  /usr/local/maven
 
     echo "配置环境变量"
     echo "export M2_HOME=/usr/local/maven" >> /etc/profile
     echo "export PATH=\$PATH:\$M2_HOME/bin:" >> /etc/profile
     source /etc/profile
     rm -rf /usr/local/src/apache-maven-*
+    clear
     echo "安装完成"
     mvn -v
 }

@@ -9,7 +9,8 @@ install(){
     wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/jdk-8u231-linux-x64.tar.gz
 
     echo "开始安装JDK"
-    tar -zxvf jdk-8u231-linux-x64.tar.gz -C /usr/local/jdk
+    tar -zxvf jdk-8u231-linux-x64.tar.gz
+    mv jdk1.8.0_231  /usr/local/jdk
 
     echo "配置环境变量"
     echo "export JAVA_HOME=/usr/local/jdk" >> /etc/profile

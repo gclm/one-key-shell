@@ -58,6 +58,11 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/gradle.sh | bash
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/git.sh | bash
 ```
 
+### 安装 Git Lfs
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/git-lfs.sh | bash
+```
+
 ### 安装 mwget
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/mwget.sh | bash

@@ -8,6 +8,8 @@ tar -xjvf mwget_0.1.0.orig.tar.bz2
 cd mwget_0.1.0.orig
 ./configure
 make && make install
+rm -rf /usr/local/src/mwget_0.1.0.orig.tar.bz2
+clear
 echo "mwget 安装成功"
 mwget -v
 }

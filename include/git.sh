@@ -26,14 +26,9 @@ install(){
     ln -sf /usr/local/git/bin/* /usr/bin/
     echo "export PATH=/usr/local/git/bin:$PATH" >> /etc/profile
     source /etc/profile
-    git_version=`git --version`
-    if [[ ${git_version} != "git version 2.25.1" ]]; then
-        echo "Git 安装失败。"
-    else
-        rm -rf /usr/local/src/git-*
-        echo "git 安装完成"
-        git --version
-    fi
+    clear
+    echo "git 安装完成"
+    git --version
 }
 
 #start menu
