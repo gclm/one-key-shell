@@ -22,12 +22,18 @@ echo "安装 curl wget vim success"
 
 main(){
 # 判断系统是否是centos和 root 用户
-curl
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/system.sh | bash
+
 # 更换镜像为阿里云镜像
 yum
 
 install
 
+# 修改控制台
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/update-hostname.sh | bash
+
+# 增加交换2G交换分区
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/swap.sh | bash
 
 reboot
 

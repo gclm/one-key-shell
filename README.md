@@ -3,6 +3,11 @@
 
 ## 使用教程
 
+### init
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/init.sh | bash
+```
+
 ### 安装 Nginx
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/nginx.sh | bash
