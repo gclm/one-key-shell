@@ -23,7 +23,6 @@ yum makecache
 
 # 更新 yum 组件版本
 yum -y update
-
 yum -y groupinstall 'Development Tools'
 
 # 修改控制台
