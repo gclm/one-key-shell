@@ -7,10 +7,10 @@ yum -y install gcc gcc-c++ bzip2 perl curl curl-devel  expat-devel gettext-devel
 yum -y install epel-release
 yum -y install libmcrypt libmcrypt-devel mcrypt mhash
 #3. 安装编译所需要的组件
-cd /usr/local/src && wget https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz && tar zxvf pcre-8.44.tar.gz && cd pcre-8.44 && ./configure --prefix=/usr/local/pcre && make && make install
-cd /usr/local/src && wget http://zlib.net/zlib-1.2.11.tar.gz && tar zxvf zlib-1.2.11.tar.gz && cd zlib-1.2.11 && ./configure --prefix=/usr/local/zlib && make && make install
-cd /usr/local/src && wget https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2 && tar xvf jemalloc-5.2.1.tar.bz2 && cd jemalloc-5.2.1 && ./configure --prefix=/usr/local/jemalloc && make && make install
-cd /usr/local/src && wget https://www.openssl.org/source/openssl-1.1.1d.tar.gz && tar zxvf openssl-1.1.1d.tar.gz && cd openssl-1.1.1d && ./config --prefix=/usr/local/openssl && make && make install
+cd /usr/local/src && wget https://gclm.coding.net/p/yum/d/yum/git/raw/master/pcre-8.44.tar.gz && tar zxvf pcre-8.44.tar.gz && cd pcre-8.44 && ./configure --prefix=/usr/local/pcre && make && make install
+cd /usr/local/src && wget https://gclm.coding.net/p/yum/d/yum/git/raw/master/zlib-1.2.11.tar.gz && tar zxvf zlib-1.2.11.tar.gz && cd zlib-1.2.11 && ./configure --prefix=/usr/local/zlib && make && make install
+cd /usr/local/src && wget https://gclm.coding.net/p/yum/d/yum/git/raw/master/jemalloc-5.2.1.tar.bz2 && tar xvf jemalloc-5.2.1.tar.bz2 && cd jemalloc-5.2.1 && ./configure --prefix=/usr/local/jemalloc && make && make install
+cd /usr/local/src && wget https://gclm.coding.net/p/yum/d/yum/git/raw/master/openssl-1.1.1d.tar.gz && tar zxvf openssl-1.1.1d.tar.gz && cd openssl-1.1.1d && ./config --prefix=/usr/local/openssl && make && make install
 cd /usr/local/src && git clone https://gitee.com/gclm/ngx_brotli.git
 rm -rf pcre-8.44.tar.gz
 rm -rf zlib-1.2.11.tar.gz
