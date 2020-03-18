@@ -12,15 +12,17 @@ echo "安装 curl wget vim success"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 echo "nameserver 114.114.114.114" >> /etc/resolv.conf
 
-# 更换镜像为阿里云镜像
-cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-wget -O /etc/yum.repos.d/epel-7.repo  http://mirrors.aliyun.com/repo/epel-7.repo
-sed -i 's#http://mirrors.cloud.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/CentOS-Base.repo
-sed -i 's#http://mirrors.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/CentOS-Base.repo
-sed -i 's#http://mirrors.cloud.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/epel-7.repo
-yum clean all
-yum makecache
+if [[ ${version} == "7"  ]]; then
+	# 更换镜像为阿里云镜像
+    cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+    wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+    wget -O /etc/yum.repos.d/epel-7.repo  http://mirrors.aliyun.com/repo/epel-7.repo
+    sed -i 's#http://mirrors.cloud.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/CentOS-Base.repo
+    sed -i 's#http://mirrors.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/CentOS-Base.repo
+    sed -i 's#http://mirrors.cloud.aliyuncs.com#http://mirrors.aliyun.com#g' /etc/yum.repos.d/epel-7.repo
+    yum clean all
+    yum makecache
+fi
 
 # 更新 yum 组件版本
 yum -y update
