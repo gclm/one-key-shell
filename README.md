@@ -18,6 +18,11 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/nginx.sh | bash
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/tengine-2.3.2.sh | bash
 ```
 
+### 安装 Jenkins
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/jenkins.sh | bash
+```
+
 ### 安装 Open JDK
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/open-jdk.sh | bash
@@ -33,11 +38,6 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/oracle-jdk.sh | bas
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/nexus.sh | bash
 ```
 
-### 安装 mwget
-```shell
-curl https://gitee.com/gclm/one-key-linux/raw/master/include/mwget.sh | bash
-```
-
 ### 安装 Maven
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/maven.sh | bash
@@ -48,11 +48,6 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/maven.sh | bash
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/mariadb-10.4.sh | bash
 ```
 
-### 安装 Jenkins
-```shell
-curl https://gitee.com/gclm/one-key-linux/raw/master/include/jenkins.sh | bash
-```
-
 ### 安装 Gradle
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/gradle.sh | bash
@@ -61,6 +56,11 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/gradle.sh | bash
 ### 安装 Git
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/git.sh | bash
+```
+
+### 安装 mwget
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/mwget.sh | bash
 ```
 
 ### 安装 Axel

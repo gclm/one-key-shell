@@ -12,7 +12,6 @@ uninstall(){
 	yum remove -y git
     rm -rf /usr/local/src/git-*
 	rm -rf /usr/local/git
-	rm -rf /usr/local/git/bin
 }
 
 # 安装 git
@@ -33,6 +32,7 @@ install(){
     else
         rm -rf /usr/local/src/git-*
         echo "git 安装完成"
+        git --version
     fi
 }
 
