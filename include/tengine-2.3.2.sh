@@ -2,7 +2,7 @@
 
 init(){
 #1. 安装依赖包
-yum -y install gcc gcc-c++  bzip2 perl curl curl-devel  expat-devel gettext-devel openssl-devel  libxml2 libxml2-devel libjpeg-devel libpng-devel  freetype-devel libmcrypt-devel autoconf
+yum -y install gcc gcc-c++ bzip2 perl curl curl-devel  expat-devel gettext-devel openssl-devel  libxml2 libxml2-devel libjpeg-devel libpng-devel  freetype-devel libmcrypt-devel autoconf
 #2. 配置扩展包安装源
 yum -y install epel-release
 yum -y install libmcrypt libmcrypt-devel mcrypt mhash
