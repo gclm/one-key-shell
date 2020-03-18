@@ -55,7 +55,7 @@ wget ${shell}/install/jdk.sh  && chmod +x jdk.sh
 init_maven(){
 cd $install_shell_path
 wget ${shell}/install/maven.sh  && chmod +x maven.sh
-. install/maven.sh
+. ../include/maven.sh
 }
 
 init_nexus(){
@@ -79,7 +79,7 @@ wget ${shell}/install/nginx.sh  && chmod +x nginx.sh
 init_gradle(){
 cd $install_shell_path
 wget ${shell}/install/gradle.sh  && chmod +x gradle.sh
-. install/gradle.sh
+. ../include/gradle.sh
 
 }
 
