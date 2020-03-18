@@ -71,13 +71,12 @@ install_nginx
 install_tengine
 
 systemctl status nginx.service
-echo "=====================================\
+echo "=====================================
 开机自启： systemctl enable  nginx.service
 启动服务： systemctl start   nginx.service
 查看服务： systemctl status  nginx.service
 暂停服务： systemctl stop  nginx.service
-=====================================
-"
+====================================="
 nginx -v
 }
 
