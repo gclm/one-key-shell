@@ -46,7 +46,7 @@ main(){
 root
 check_system_version
 check_linux_version
-if [[ ${release} != "centos" || ${version} != "7" || ${bit} != "x64" ]]; then
+if [[ ${release} != "centos" || ${version} != "7" || ${version} != "8" || ${bit} != "x64" ]]; then
 	echo -e "${Error} 本脚本不支持当前系统 ${release}-${version}-${bit} !" && exit 1
 fi
 }
