@@ -3,6 +3,16 @@
 
 ## 使用教程
 
+### dns
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/dns.sh | bash
+```
+
+### 阿里云yum源
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/aliyun-yum.sh | bash
+```
+
 ### init
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/init.sh | bash
