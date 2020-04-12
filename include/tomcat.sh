@@ -29,7 +29,6 @@ tomcat_uninstall(){
 main(){
   clear
   echo -e "
-  ———————————— 开发环境(Java) ————————————
    1.${Font_color_suffix} 安装 Tomcat7
    2.${Font_color_suffix} 安装 Tomcat8
    3.${Font_color_suffix} 安装 Tomcat9
@@ -38,7 +37,7 @@ main(){
   read -p " 请输入选项 :" num
   case "$num" in
     0)
-    exit 1
+      exit 1
     ;;
     1)
       version=7.0.100
@@ -53,7 +52,6 @@ main(){
       tomcat
     ;;
     *)
-    clear
     echo -e "${Error}:请输入正确选项："
     sleep 3s
     main
