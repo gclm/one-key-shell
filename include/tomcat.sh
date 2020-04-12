@@ -27,36 +27,8 @@ tomcat_uninstall(){
 }
 
 main(){
-  clear
-  echo -e "
-   1.${Font_color_suffix} 安装 Tomcat7
-   2.${Font_color_suffix} 安装 Tomcat8
-   3.${Font_color_suffix} 安装 Tomcat9
-   0.${Font_color_suffix} 退出脚本
-  ——————————————————————————————————————" && echo
-  read -p " 请输入选项 :" num
-  case "$num" in
-    0)
-      exit 1
-    ;;
-    1)
-      version=7.0.100
-      tomcat
-    ;;
-    2)
-      version=8.5.53
-      tomcat
-    ;;
-    3)
-      version=9.0.34
-      tomcat
-    ;;
-    *)
-    echo -e "${Error}:请输入正确选项："
-    sleep 3s
-    main
-    ;;
-  esac
+  version=7.0.100
+  tomcat
 }
 
 main
