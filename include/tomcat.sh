@@ -9,7 +9,7 @@ tomcat(){
 
     echo " 开始安装 tomcat "
     tar -zxvf apache-tomcat-9.0.34.tar.gz
-    mv apache-tomcat-9.0.34.tar.gz  /usr/local/tomcat
+    mv apache-tomcat-9.0.34  /usr/local/tomcat
     rm -rf /usr/local/src/apache-tomcat-*
 
     clear
