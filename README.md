@@ -52,6 +52,10 @@ curl https://gitee.com/gclm/one-key-linux/raw/master/include/nexus.sh | bash
 ```shell
 curl https://gitee.com/gclm/one-key-linux/raw/master/include/maven.sh | bash
 ```
+### 安装 Tomcat
+```shell
+curl https://gitee.com/gclm/one-key-linux/raw/master/include/tomcat.sh | bash
+```
 
 ### 安装 Mariadb
 ```shell
