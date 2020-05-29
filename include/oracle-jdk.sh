@@ -6,7 +6,7 @@ install(){
     cd /usr/local/src
 
     echo "正在下载jdk请稍等..."
-    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/jdk-8u231-linux-x64.tar.gz
+    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/lfs/master/jdk-8u231-linux-x64.tar.gz
 
     echo "开始安装JDK"
     tar -zxvf jdk-8u231-linux-x64.tar.gz

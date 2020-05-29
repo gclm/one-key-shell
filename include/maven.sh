@@ -5,7 +5,7 @@ maven(){
     cd /usr/local/src
 
     echo "正在下载 Maven 安装包，请稍等..."
-    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/apache-maven-3.6.3-bin.tar.gz
+    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/lfs/master/apache-maven-3.6.3-bin.tar.gz
 
     echo " 开始安装 Maven "
     tar -zxvf apache-maven-3.6.3-bin.tar.gz

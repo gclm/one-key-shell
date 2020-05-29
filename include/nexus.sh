@@ -11,7 +11,7 @@ install(){
 
     cd /usr/local/src
     echo "正在下载 nexus 请稍等..."
-    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/nexus-3.21.1-01-unix.tar.gz
+    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/lfs/master/nexus-3.21.1-01-unix.tar.gz
 
     tar zxvf nexus-3.21.1-01-unix.tar.gz
     mv nexus-3.21.1-01  /usr/local/nexus

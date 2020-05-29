@@ -4,7 +4,7 @@ install(){
     cd /usr/local/src
 
     echo "正在下载 Gradle 安装包，请稍等..."
-    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/gradle-6.2.2-bin.zip
+    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/lfs/master/gradle-6.2.2-bin.zip
     echo "开始安装 Gradle "
     unzip gradle-6.2.2-bin.zip
     mv gradle-6.2.2  /usr/local/gradle

@@ -8,7 +8,7 @@ tomcat(){
     cd /usr/local/src
 
     echo "正在下载 tomcat 安装包，请稍等..."
-    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/raw/master/apache-tomcat-${version}.tar.gz
+    wget -N --no-check-certificate https://gclm.coding.net/p/java/d/java/git/lfs/master/apache-tomcat-${version}.tar.gz
 
     echo " 开始安装 tomcat "
     tar -zxvf apache-tomcat-${version}.tar.gz
