@@ -35,21 +35,25 @@ make && make install
 ln -sf /usr/sbin/nginx /usr/bin/nginx
 }
 
-#[Unit]
-#Description=nginx - high performance web server
-#Documentation=http://nginx.org/en/docs/
-#After=network-online.target remote-fs.target nss-lookup.target
-#Wants=network-online.target
-#
-#[Service]
-#Type=forking
-#PIDFile=/var/run/nginx.pid
-#ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
-#ExecReload=/bin/kill -s HUP $MAINPID
-#ExecStop=/bin/kill -s TERM $MAINPID
-#
-#[Install]
-#WantedBy=multi-user.target
+config(){
+sudo tee /usr/lib/systemd/system/nginx.service <<-'EOF'
+[Unit]
+Description=nginx - high performance web server
+Documentation=http://nginx.org/en/docs/
+After=network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/nginx.pid
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+EOF
+}
 
 
 main(){
