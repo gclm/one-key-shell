@@ -24,6 +24,10 @@ module_hotfixes=true
 EOF
 
 yum install -y nginx
+mkdir -p /etc/nginx/snippets
+wget -0 /etc/nginx/snippets/compression.conf https://gitee.com/gclm/one-key-linux/raw/master/config/nginx/snippets/compression.conf
+wget -0 /etc/nginx/snippets/default.conf https://gitee.com/gclm/one-key-linux/raw/master/config/nginx/snippets/default.conf
+wget -0 /etc/nginx/snippets/ssl.conf https://gitee.com/gclm/one-key-linux/raw/master/config/nginx/snippets/ssl.conf
 clear
 echo "Nginx 安装完成"
 nginx -v
