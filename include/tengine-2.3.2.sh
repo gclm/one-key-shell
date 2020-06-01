@@ -18,34 +18,7 @@ rm -rf jemalloc-5.2.1.tar.bz2
 rm -rf openssl-1.1.1d.tar.gz
 }
 
-install_nginx(){
-rm -rf /etc/yum.repos.d/nginx.repo
-yum install -y yum-utils
-sudo tee /etc/yum.repos.d/nginx.repo <<-'EOF'
-[nginx-stable]
-name=nginx stable repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=1
-enabled=1
-gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
-
-[nginx-mainline]
-name=nginx mainline repo
-baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
-gpgcheck=1
-enabled=0
-gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
-EOF
-
-yum install -y nginx
-clear
-echo "Nginx 安装完成"
-nginx -v
-}
-
-install_tengine(){
+install(){
 # 1. 下载
 cd /usr/local/src && wget https://tengine.taobao.org/download/tengine-2.3.2.tar.gz && tar -zxvf tengine-2.3.2.tar.gz && cd tengine-2.3.2
 # 2. 编译安装
@@ -62,13 +35,28 @@ make && make install
 ln -sf /usr/sbin/nginx /usr/bin/nginx
 }
 
+#[Unit]
+#Description=nginx - high performance web server
+#Documentation=http://nginx.org/en/docs/
+#After=network-online.target remote-fs.target nss-lookup.target
+#Wants=network-online.target
+#
+#[Service]
+#Type=forking
+#PIDFile=/var/run/nginx.pid
+#ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+#ExecReload=/bin/kill -s HUP $MAINPID
+#ExecStop=/bin/kill -s TERM $MAINPID
+#
+#[Install]
+#WantedBy=multi-user.target
+
+
 main(){
 # 初始化环境,安装依赖库
 init
-# 安装 nginx
-install_nginx
 # 安装 tengine
-install_tengine
+install
 
 systemctl status nginx.service
 echo "=====================================
