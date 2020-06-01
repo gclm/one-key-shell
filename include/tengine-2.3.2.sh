@@ -61,15 +61,18 @@ main(){
 init
 # 安装 tengine
 install
+# 配置 tengine
+config
 
+clear
 systemctl status nginx.service
+nginx -v
 echo "=====================================
 开机自启： systemctl enable  nginx.service
 启动服务： systemctl start   nginx.service
 查看服务： systemctl status  nginx.service
 暂停服务： systemctl stop  nginx.service
 ====================================="
-nginx -v
 }
 
 main
