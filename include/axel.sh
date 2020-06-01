@@ -13,7 +13,7 @@ main(){
     ./configure --prefix=/usr/local/axel
     make && make install
     #axel 执行路径
-    echo 'export PATH=$PATH:$/usr/local/axel/bin:' >> /etc/profile
+    echo 'export PATH=$PATH:/usr/local/axel/bin:' >> /etc/profile
     #使文件生效
     source /etc/profile
     rm -rf /usr/local/src/axel-2.17.7*
