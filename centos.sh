@@ -23,7 +23,8 @@ dnf install -y curl wget vim
 
 # 增加github hosts
 echo "==> 增加github hosts"
-cat>/etc/hosts<<EOF
+cp /etc/hosts /etc/hosts.bak
+cat>>/etc/hosts<<EOF
 # 代理
 151.101.0.133 raw.githubusercontent.com
 199.232.68.133 raw.githubusercontent.com
