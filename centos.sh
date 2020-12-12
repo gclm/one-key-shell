@@ -12,13 +12,25 @@ dnf -y update
 # 更换终端名
 hostname="centos$centos_version"
 echo "==> 修改hostname为$hostname"
-hostnamectl set-hostname centos
+hostnamectl set-hostname "$hostname"
 hostnamectl --pretty
 hostnamectl --static
 hostnamectl --transient
 
 # 安装基础组件
+echo "==> 安装基础组件"
 dnf install -y curl wget vim
+
+# 增加github hosts
+echo "==> 增加github hosts"
+cat>/etc/hosts<<EOF
+# 代理
+151.101.0.133 raw.githubusercontent.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+EOF
 
 # 配置交换分区
 echo "==> 修改之前交换分区"
