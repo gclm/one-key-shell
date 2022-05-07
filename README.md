@@ -1,5 +1,5 @@
-# one-key-linux
-一键安装 Linux（Operations）
+# one-key-shell
+Linux、Mac一键安装脚本(Centos7专用)
 
 ## 使用教程
 
