@@ -1,7 +1,7 @@
 echo "删除旧版docker"
-apt-get remove docker docker-engine docker.io
+apt-get remove -y docker docker-engine docker.io
 echo "更新docker镜像并下载docker"
-apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://repo.huaweicloud.com/docker-ce/linux/debian/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://repo.huaweicloud.com/docker-ce/linux/debian $(lsb_release -cs) stable"
 apt-get update -y
