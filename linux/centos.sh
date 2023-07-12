@@ -6,8 +6,8 @@ centos_version="$1"
 echo "==> 更换镜像为华为云"
 cp -a /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-"$centos_version"-reg.repo
-dnf -y clean all
-dnf -y update
+yum -y clean all
+yum -y update
 
 # 更换终端名
 hostname="centos$centos_version"
@@ -19,7 +19,7 @@ hostnamectl --transient
 
 # 安装基础组件
 echo "==> 安装基础组件"
-dnf install -y curl wget vim
+yum install -y curl wget vim
 
 # 增加github hosts
 echo "==> 增加github hosts"
